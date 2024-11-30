@@ -5,22 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptocurrency Price Tracker</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        #result h2 {
+            margin-top: 0;
+        }
+        .crypto-logo {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <h1>Cryptocurrency Price Tracker</h1>
     <form id="cryptoForm">
         <label for="crypto_symbol">Select Cryptocurrency:</label>
         <select name="crypto_symbol" id="crypto_symbol">
-            <option value="bitcoin">Bitcoin</option>
-            <option value="ethereum">Ethereum</option>
-            <option value="solana">Solana</option>
-            <option value="monero">Monero</option>
-            <option value="the-open-network">The Open Network</option>
-            <option value="pendle">Pendle</option>
-            <option value="optimism">Optimism</option>
-            <option value="major">Major</option>
-            <option value="dogecoin">Dogecoin</option>
-            <option value="tron">Tron</option>
+            <option value="bitcoin">
+                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="crypto-logo"> Bitcoin
+            </option>
+            <option value="ethereum">
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="crypto-logo"> Ethereum
+            </option>
+            <option value="solana">
+                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="crypto-logo"> Solana
+            </option>
+            <option value="monero">
+                <img src="https://cryptologos.cc/logos/monero-xmr-logo.png" alt="Monero" class="crypto-logo"> Monero
+            </option>
+            <option value="the-open-network">
+                <img src="https://cryptologos.cc/logos/the-open-network-ton-logo.png" alt="The Open Network" class="crypto-logo"> The Open Network
+            </option>
+            <option value="pendle">
+                <img src="https://cryptologos.cc/logos/pendle-pendle-logo.png" alt="Pendle" class="crypto-logo"> Pendle
+            </option>
+            <option value="optimism">
+                <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png" alt="Optimism" class="crypto-logo"> Optimism
+            </option>
+            <option value="major">
+                <img src="https://cryptologos.cc/logos/major-major-logo.png" alt="Major" class="crypto-logo"> Major
+            </option>
+            <option value="dogecoin">
+                <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="Dogecoin" class="crypto-logo"> Dogecoin
+            </option>
+            <option value="tron">
+                <img src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="Tron" class="crypto-logo"> Tron
+            </option>
         </select>
         <button type="submit">Check Price</button>
     </form>
